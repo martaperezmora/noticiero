@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlsn:th="http://www.thymeleaf.org">
+
+<head th:replace="commons/header :: header"/>
+<body>
+    <!-- menu -->
+    <div th:replace="commons/menu :: menu"/>
+    
+    <!-- formulario -->
+    <form class="row g-3" method="post" th:action="@{/noticiero/guardar}">
+        <div class="col-md-1">
+          <label for="codigo" class="form-label" th:text="#{noticia.codigo}">Código</label>
+          <input type="number" class="form-control" id="codigo" name="codigo" min="0">
+        </div>
+
+        <div class="col-md-3">
+          <label for="titular" class="form-label" th:text="#{noticia.titular}">Titular</label>
+          <input type="text" class="form-control" id="titular" name="titular" autofocus>
+        </div>
+
+        <div class="col-md-3">
+          <label for="descripcion" class="form-label" th:text="#{noticia.descripcion}">Descripción</label>
+          <input type="text" class="form-control" id="descripcion" name="descripcion">
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" th:text="#{noticia.nuevo}">nuevo</button>
+        </div>
+
+      </form>
+    
+    <div th:replace="commons/footer :: footer" class="container"/>
+  
+  </body>
+  
+  </html>

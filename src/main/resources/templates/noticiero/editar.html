@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head th:replace="commons/header :: header"/>
+<body>
+    <div th:replace="commons/menu :: menu"/>
+
+    <form class="row g-3" th:action="@{/noticiero/modificar}" method="post">
+        <div class="col-md-1">
+            <label for="codigo" class="form-label" th:text="#{noticia.codigo}">Código</label>
+            <input type="number" class="form-control" id="codigo" name="codigo" min="0" th:value="${noticia.codigo}">
+          </div>
+
+        <div class="col-md-3">
+          <label for="titular" class="form-label" th:text="#{noticia.titular}">Titular</label>
+          <input type="text" class="form-control" id="titular" name="titular" th:value="${noticia.titular}" autofocus>
+        </div>
+
+        <div class="col-md-3">
+            <label for="descripcion" class="form-label" th:text="#{noticia.descripcion}">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" th:value="${noticia.descripcion}">
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" th:text="#{noticia.editar}">editar</button>
+        </div>
+
+      </form>
+
+    <div th:replace="commons/footer :: footer" class="container"/>
+</body>
+</html>
